@@ -1,0 +1,225 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 58.8rem;
+  height: 14rem;
+  background-color: #fff;
+
+  cursor: pointer;
+  border-radius: 0.8rem;
+}
+
+.btn-upload {
+  background-color: #de1b89;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #fff;
+
+  margin-top: 1.8rem;
+
+  padding: 1.2rem 1.8rem;
+
+  width: 100%;
+  border-radius: 0.8rem;
+}
+
+.btn-analyze {
+  background-color: #10f1c3;
+
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #000;
+
+  margin-top: 1.8rem;
+
+  padding: 1.2rem 1.8rem;
+
+  width: 100%;
+  border-radius: 0.8rem;
+}
+.pdf-icon {
+  height: 52px;
+}
+
+.uploaded {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.uploaded-text {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #3f3f3f;
+}
+
+.upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.upload-icon {
+  height: 52px;
+}
+
+.div-res {
+  padding-left: 3.2rem;
+}
+
+.result-text {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.result-Heading {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.a-stats-box {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.a-name {
+  margin: 0;
+  font-size: 4.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.a-box {
+  display: flex;
+  flex-direction: column;
+  padding: 1.8rem 2.4rem;
+  border-radius: 12px;
+  border: 1px solid #5c5c5c34;
+  width: 32rem;
+  min-height: 39rem;
+}
+
+.a-secondary-box {
+  display: flex;
+  margin-top: 1.4rem;
+  flex-direction: column;
+  gap: 2rem;
+  margin-left: 0.8rem;
+}
+
+.a-careers {
+  background-color: #161616;
+  color: #fff;
+  font: 1.8rem;
+}
+
+.a-text-primary {
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin: 0;
+  padding-bottom: 0.6rem;
+}
+
+.a-text-secondary {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.element-with-gradient-border {
+  position: relative;
+  display: inline;
+}
+
+.element-with-gradient-border::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  width: 17rem;
+  background: linear-gradient(to left, #10f1c3, #ff0090);
+  z-index: 2;
+}
+
+.element-with-gradient-border--2 {
+  position: relative;
+  display: inline;
+}
+
+.element-with-gradient-border--2::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  width: 22.9rem;
+  background: linear-gradient(to left, #10f1c3, #ff0090);
+  z-index: 2;
+}
+
+.pie {
+  margin-top: 2rem;
+}
+
+.element-with-gradient-border--3 {
+  position: relative;
+  display: inline;
+}
+
+.element-with-gradient-border--3::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  width: 14.4rem;
+  background: linear-gradient(to left, #10f1c3, #ff0090);
+  z-index: 2;
+}
+
+.a-show-btn {
+  margin-top: 1.6rem;
+  font-weight: 600;
+  background-color: #ff0090;
+  color: #fff;
+  padding: 0.8rem 0;
+  border-radius: 6px;
+}
+
+.name-btn {
+  display: flex;
+  gap: 20rem;
+
+  margin-bottom: 3.2rem;
+  margin-top: 2.4rem;
+}
+
+.gen {
+  background-color: #14efc5;
+  font-weight: 600;
+  padding: 0 2rem;
+  border-radius: 6px;
+  height: 4.8rem;
+}

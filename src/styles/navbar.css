@@ -1,0 +1,71 @@
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-bar-logo {
+  padding: 2.4rem 0;
+  display: flex;
+  align-items: center;
+  gap: 2.8rem;
+}
+
+.nav-logo__container {
+  border-right: 2px solid #fff;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.nav-logo:link,
+.nav-logo:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-logo__img {
+  height: 5.4rem;
+}
+
+.nav-logo__heading {
+  margin: 0;
+  padding-right: 2.8rem;
+  font-family: 'Satoshi-regular';
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+  line-height: 20px;
+}
+
+.nav-text {
+  color: #fff;
+  margin: 0;
+}
+
+.nav-text:nth-child(1) {
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding-bottom: 0.4rem;
+}
+
+.nav-text:nth-child(2) {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.cta-source {
+  background-color: #de1b89;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 0.8rem 1.8rem;
+
+  border-radius: 0.8rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
