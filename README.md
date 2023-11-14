@@ -29,7 +29,7 @@ Resumtica is an application that leverages GPT-4 to analyze resumes, providing a
 
 To run Resumtica locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/Resumtica.git`
+1. Clone the repository: `git clone https://github.com/SiddhantaChandra/Resumatica`
 2. Navigate to the project directory: `cd Resumtica`
 3. Install dependencies: `npm install`
 4. Set up your API keys for ConvertApi and OpenAI in the appropriate components.
