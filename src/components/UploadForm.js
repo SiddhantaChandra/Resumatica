@@ -31,7 +31,7 @@ function UploadForm({
     setIsLoading(true);
     setView(1);
     const openai = new OpenAI({
-      apiKey: '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',
+      apiKey: process.env.REACT_APP_OPENAI_KEY,
       dangerouslyAllowBrowser: true,
     });
 
