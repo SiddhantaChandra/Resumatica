@@ -27,10 +27,6 @@ const Excel = ({ response }) => {
     reader.readAsBinaryString(file);
   };
 
-  const handleResponseChange = (e) => {
-    const { name, value } = e.target;
-  };
-
   const exportToExcel = () => {
     // Create rows for each element in the Improvements array
     const rows = response.Improvements.map((improvement) => ({
@@ -52,7 +48,6 @@ const Excel = ({ response }) => {
           type="text"
           name="Name"
           value={response.Name}
-          onChange={handleResponseChange}
           className="e-p input  "
           disabled
         />
@@ -65,13 +60,6 @@ const Excel = ({ response }) => {
               className="e-p input"
               type="text"
               value={improvement}
-              onChange={(e) =>
-                handleResponseChange({
-                  name: 'Improvements',
-                  value: e.target.value,
-                  index,
-                })
-              }
               disabled
             />
           ))}
