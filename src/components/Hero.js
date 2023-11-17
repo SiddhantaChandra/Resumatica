@@ -11,13 +11,16 @@ function Hero() {
   const [isLoading, setIsLoading] = useState(false);
   const [view, setView] = useState(0);
   const [response, setResponse] = useState('');
+  const [isParsing, setIsParsing] = useState(0);
 
   useEffect(() => {
     async function convertAndDisplayResult() {
+      setIsParsing(1);
       if (file) {
         try {
           // Initialize ConvertApi with your API key
-          let convertApi = ConvertApi.auth('kh0UpOyhPLmI4tXU');
+
+          let convertApi = ConvertApi.auth(process.env.REACT_APP_CON_KEY);
 
           let params = convertApi.createParams();
           params.add('File', file);
@@ -32,10 +35,11 @@ function Hero() {
           // console.log(text);
           setResultText(text);
         } catch (error) {
-          console.error('Error converting file:', error);
+          // console.error('Error converting file:', error);
           setResultText('Error occurred during conversion');
         }
       }
+      setIsParsing(0);
     }
 
     convertAndDisplayResult();
@@ -56,6 +60,7 @@ function Hero() {
                 setView={setView}
                 setResponse={setResponse}
                 view={view}
+                isParsing={isParsing}
               />
             </div>
             <div className="div-res">

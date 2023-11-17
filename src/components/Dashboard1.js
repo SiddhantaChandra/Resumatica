@@ -8,8 +8,10 @@ import Roadmap from './Roadmap';
 function Dashboard1({ response }) {
   const [detailedPath, setDetailedPath] = useState('');
   const [selectedPath, setSelectedPath] = useState('');
+  const [isRoadmapLoading, setIsMapLoading] = useState(0);
 
   const generateDetailedPath = async (el) => {
+    setIsMapLoading(1);
     setSelectedPath(el);
     const prompt =
       'Generate a jsonfile with a single key being job1 and value being an array of  string being the study roadmap for' +
@@ -25,9 +27,10 @@ function Dashboard1({ response }) {
     };
 
     const response = await openai.chat.completions.create(request);
-    console.log(response.choices[0].message.content);
+    // console.log(response.choices[0].message.content);
 
     setDetailedPath(JSON.parse(response.choices[0].message.content));
+    setIsMapLoading(0);
   };
 
   const handlePath = (el) => {
@@ -43,7 +46,11 @@ function Dashboard1({ response }) {
         selectedpath={selectedPath}
       />
       {detailedPath !== '' ? (
-        <Roadmap detailedPath={detailedPath} selectedPath={selectedPath} />
+        <Roadmap
+          detailedPath={detailedPath}
+          selectedPath={selectedPath}
+          isRoadmapLoading={isRoadmapLoading}
+        />
       ) : (
         <></>
       )}

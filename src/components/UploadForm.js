@@ -13,6 +13,7 @@ function UploadForm({
   setView,
   setResponse,
   view,
+  isParsing,
 }) {
   const [tempInput, setTempInput] = useState(null);
   const [hide, setHide] = useState(0);
@@ -41,7 +42,7 @@ function UploadForm({
     };
 
     const response = await openai.chat.completions.create(request);
-    console.log(response.choices[0].message.content);
+    // console.log(response.choices[0].message.content);
 
     setResponse(JSON.parse(response.choices[0].message.content));
     setView(2);
@@ -84,7 +85,7 @@ function UploadForm({
               onChange={({ target: { files } }) => setTempInput(files[0])}
             />
           </form>
-          {hide === 1 ? (
+          {hide === 1 && isParsing === 0 ? (
             <button className="btn-analyze " onClick={handleAnalyze}>
               Analyze
             </button>

@@ -7,8 +7,6 @@ function Analysis({ response, resultText }) {
   const value = Number(response.ResumeScore);
 
   const [showGeneratePage, setShowGeneratePage] = useState(0);
-  // console.log(value, remainingValue);
-  // console.log(response.Improvements);
 
   const generateResume = () => {
     setShowGeneratePage(1);

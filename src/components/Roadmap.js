@@ -3,8 +3,9 @@ import {
   ChevronDoubleDownIcon,
   ChevronDoubleUpIcon,
 } from '@heroicons/react/24/solid';
+import RoadmapLoader from './RoadmapLoader';
 
-function Roadmap({ detailedPath, selectedPath }) {
+function Roadmap({ detailedPath, selectedPath, isRoadmapLoading }) {
   const [displayRoadmap, setDisplayRoadmap] = useState(0);
 
   const handleShowRoadmap = () => {
@@ -26,18 +27,22 @@ function Roadmap({ detailedPath, selectedPath }) {
           <ChevronDoubleUpIcon className="d-showmore" />
         )}
       </div>
-      <div className="d-roadmaps">
-        {detailedPath.job1.map((el, i) => {
-          return (
-            <p
-              key={`RM${i}`}
-              className={displayRoadmap === 0 ? 'd-roadmap' : 'roadmap'}
-            >
-              {el}
-            </p>
-          );
-        })}
-      </div>
+      {isRoadmapLoading === 1 ? (
+        <RoadmapLoader />
+      ) : (
+        <div className="d-roadmaps">
+          {detailedPath.job1.map((el, i) => {
+            return (
+              <p
+                key={`RM${i}`}
+                className={displayRoadmap === 0 ? 'd-roadmap' : 'roadmap'}
+              >
+                {el}
+              </p>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
