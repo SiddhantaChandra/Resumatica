@@ -17,7 +17,7 @@ function Hero() {
       if (file) {
         try {
           // Initialize ConvertApi with your API key
-          let convertApi = ConvertApi.auth('kh0UpOyhPLmI4tX');
+          let convertApi = ConvertApi.auth('kh0UpOyhPLmI4tXU');
 
           let params = convertApi.createParams();
           params.add('File', file);

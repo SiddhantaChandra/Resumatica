@@ -61,7 +61,7 @@ function Analysis({ response, resultText }) {
                 Career Paths
               </p>
               <div className="a-secondary-box">
-                {response.CareerPaths.map((el, i) => (
+                {response.SuggestedJobPositions.map((el, i) => (
                   <p key={i} className="a-text-secondary">
                     &#x2022; {el}
                   </p>

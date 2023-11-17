@@ -24,19 +24,19 @@ function UploadForm({
   }
 
   const prompt =
-    'Analyze the following resume and return a json with following keys: Name, CareerPaths(ex. crimal lawyer, frontend developer, accountant), ResumeScore(out of 10), Improvements(changes that can be made in the resume)' +
+    'Analyze the following resume and return a json with following keys: Name, SuggestedJobPositions(ex. crimal lawyer, frontend developer, accountant), ResumeScore(out of 10), Improvements(changes that can be made in the resume)' +
     resultText;
 
   const generateText = async () => {
     setIsLoading(true);
     setView(1);
     const openai = new OpenAI({
-      apiKey: process.env.REACT_APP_API_KEY,
+      apiKey: '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',
       dangerouslyAllowBrowser: true,
     });
 
     const request = {
-      model: 'gpt-4',
+      model: 'gpt-3.5-turbo',
       messages: [{ role: 'user', content: prompt }],
     };
 
