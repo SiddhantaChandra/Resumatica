@@ -15,11 +15,9 @@ function Hero() {
 
   useEffect(() => {
     async function convertAndDisplayResult() {
-      setIsParsing(1);
       if (file) {
         try {
           // Initialize ConvertApi with your API key
-
           let convertApi = ConvertApi.auth(process.env.REACT_APP_CON_KEY);
 
           let params = convertApi.createParams();
@@ -34,12 +32,12 @@ function Hero() {
           const text = await fetchUrl.text();
           // console.log(text);
           setResultText(text);
+          setIsParsing(1);
         } catch (error) {
           // console.error('Error converting file:', error);
           setResultText('Error occurred during conversion');
         }
       }
-      setIsParsing(0);
     }
 
     convertAndDisplayResult();

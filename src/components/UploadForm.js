@@ -17,6 +17,7 @@ function UploadForm({
 }) {
   const [tempInput, setTempInput] = useState(null);
   const [hide, setHide] = useState(0);
+  console.log(isParsing);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -85,10 +86,16 @@ function UploadForm({
               onChange={({ target: { files } }) => setTempInput(files[0])}
             />
           </form>
-          {hide === 1 && isParsing === 0 ? (
+          {isParsing === 1 ? (
             <button className="btn-analyze " onClick={handleAnalyze}>
               Analyze
             </button>
+          ) : (
+            <></>
+          )}
+
+          {hide === 1 ? (
+            <></>
           ) : (
             <button className="btn-upload" onClick={handleSubmit}>
               Upload

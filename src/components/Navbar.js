@@ -18,10 +18,15 @@ function Navbar() {
           <p className="nav-text">powered by GPT 3.5</p>
         </div>
       </div>
-      <button className="cta-source">
+      <a
+        className="cta-source"
+        href="https://github.com/SiddhantaChandra/Resumatica"
+        target="_blank"
+        rel="noreferrer"
+      >
         Source Code
         <img src={githubLogo} alt="Logo of Github" />
-      </button>
+      </a>
     </nav>
   );
 }
