@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowsIn, ArrowsOut, ArrowsClockwise } from '@phosphor-icons/react';
 import '../styles/info.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast, Bounce } from 'react-toastify';
 
 function InfoDetails({ parseData, setParseData }) {
   // console.log(parseData.linkedIn);
@@ -21,6 +23,21 @@ function InfoDetails({ parseData, setParseData }) {
   }, [setName, parseData, setAddress, setEmail, setPhone, setLinkedIn]);
 
   const handleUpdateInfo = () => {
+    toast.success(' Updated Succesfully', {
+      style: {
+        fontSize: '1.4rem',
+        // fontWeight: 'bold',
+      },
+      position: 'top-center',
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+      transition: Bounce,
+    });
     setParseData((prev) => {
       prev = {
         ...prev,

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDropzone } from 'react-dropzone';
 import uploadlogo from '../img/icons/upload.png';
 
-function Dropzone({ setParseData }) {
+function Dropzone({ setParseData, setIsParsing }) {
   const [inputFileName, setInputFileName] = useState(null);
   const [inputFile, setInputFile] = useState(null);
 
@@ -30,6 +30,7 @@ function Dropzone({ setParseData }) {
     const formData = new FormData();
     formData.append('pdfFile', inputFile);
 
+    setIsParsing(1);
     fetch('/convert', {
       method: 'POST',
       body: formData,
@@ -38,6 +39,7 @@ function Dropzone({ setParseData }) {
       .then((data) => {
         // console.log('Success', data);
         setParseData(data);
+        setIsParsing(0);
         navigate('/edit-personal-info');
       })
       .catch((error) => {

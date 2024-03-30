@@ -8,6 +8,8 @@ import Summary from './Summary';
 import Projects from '../components/Projects';
 import Certifications from '../components/Certifications';
 import Skills from '../components/Skills';
+import { ToastContainer, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Information({ parseData, setParseData }) {
   const [showSection, setShowSection] = useState({
@@ -22,6 +24,19 @@ function Information({ parseData, setParseData }) {
   return (
     <div className="information-container">
       <Navbar />
+      <ToastContainer
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="dark"
+        transition={Bounce}
+      />
       <div className="display-info-pdf">
         <div className="info-boxes">
           <InfoDetails parseData={parseData} setParseData={setParseData} />
