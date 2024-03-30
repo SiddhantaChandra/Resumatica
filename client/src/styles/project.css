@@ -1,0 +1,63 @@
+.section-projects {
+  background-color: #222222;
+  /* padding: 0 2rem; */
+  border-radius: 0.8rem;
+  /* width: 48rem; */
+}
+
+.projects-heading-box {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+  padding-left: 2rem;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+}
+
+.project-container {
+  padding: 0 2rem;
+  padding-bottom: 2.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border-bottom: dashed 2px #373737;
+}
+
+.project-container:last-child {
+  border: none;
+}
+
+.project-name-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-desc-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.textarea-projects {
+  height: 10rem;
+}
+
+.proj-button-box {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.proj-label-btn-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.proj-input {
+  width: 40rem;
+}
