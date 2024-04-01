@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
-import InfoDetails from '../components/InfoDetails';
-import EducationDetails from '../components/EducationDetails';
+
 import DefaultResume from '../components/Resumes/Resume-1/DefaultResume';
-import WorkExperience from './WorkExperience';
-import Summary from './Summary';
-import Projects from '../components/Projects';
-import Certifications from '../components/Certifications';
-import Skills from '../components/Skills';
+
 import { ToastContainer, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Sections from '../components/Sections';
 
 function Information({ parseData, setParseData }) {
   const [showSection, setShowSection] = useState({
@@ -38,45 +34,13 @@ function Information({ parseData, setParseData }) {
         transition={Bounce}
       />
       <div className="display-info-pdf">
-        <div className="info-boxes">
-          <InfoDetails parseData={parseData} setParseData={setParseData} />
-          <Summary
-            parseData={parseData}
-            setParseData={setParseData}
-            showSection={showSection}
-            setShowSection={setShowSection}
-          />
-          <WorkExperience
-            parseData={parseData}
-            setParseData={setParseData}
-            showSection={showSection}
-            setShowSection={setShowSection}
-          />
-          <EducationDetails
-            parseData={parseData}
-            setParseData={setParseData}
-            showSection={showSection}
-            setShowSection={setShowSection}
-          />
-          <Projects
-            parseData={parseData}
-            setParseData={setParseData}
-            showSection={showSection}
-            setShowSection={setShowSection}
-          />
-          <Certifications
-            parseData={parseData}
-            setParseData={setParseData}
-            showSection={showSection}
-            setShowSection={setShowSection}
-          />
-          <Skills
-            parseData={parseData}
-            setParseData={setParseData}
-            showSection={showSection}
-            setShowSection={setShowSection}
-          />
-        </div>
+        <Sections
+          parseData={parseData}
+          setParseData={setParseData}
+          showSection={showSection}
+          setShowSection={setShowSection}
+        />
+
         <DefaultResume parseData={parseData} showSection={showSection} />
       </div>
     </div>

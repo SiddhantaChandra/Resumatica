@@ -22,7 +22,7 @@ function Certifications({
   });
   const [expandCert, setExpandCert] = useState(1);
 
-  console.log(certifications);
+  // console.log(certifications);
 
   const handleExpandCert = () => {
     if (expandCert === 0) setExpandCert(1);

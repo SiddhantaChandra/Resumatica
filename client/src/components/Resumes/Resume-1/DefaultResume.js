@@ -18,15 +18,27 @@ import PhoneLogo from './phone-bold.png';
 import { DownloadSimple } from '@phosphor-icons/react';
 
 function Header({ parseData, font, marginBot, showSection }) {
+  const photo = parseData.displayPhoto
+    ? URL.createObjectURL(parseData.displayPhoto)
+    : '';
   const styles = StyleSheet.create({
     headingBox: {
       textAlign: 'center',
       fontWeight: 'extrabold',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     headingName: {
       fontSize: '24px',
       // fontFamily: 'Times-Roman',
       fontFamily: 'Times-Bold',
+    },
+    headingPhoto: {
+      height: '70px',
+      width: '70px',
+      textAlign: 'center',
+      borderRadius: parseData.photoRadius,
     },
     headingDetails: {
       display: 'flex',
@@ -132,6 +144,9 @@ function Header({ parseData, font, marginBot, showSection }) {
     <Document>
       <Page size="A4" style={bodyStyles} className="bodyStyles">
         <View style={styles.headingBox} className="heading-box">
+          {parseData.displayPhoto && parseData.showPhoto === 0 && (
+            <Image src={photo} style={styles.headingPhoto} />
+          )}
           <Text style={styles.headingName} className="heading-name">
             {parseData.name}
           </Text>
@@ -353,7 +368,6 @@ function Skills({ parseData, styles }) {
 function DefaultResume({ parseData, showSection }) {
   const [marginBot, setMarginBot] = useState('50');
   const handleMarginChange = (e) => {
-    // console.log(e.target.value);
     setMarginBot(e.target.value);
   };
   const font = 'Times-Roman';

@@ -3,6 +3,7 @@ import { ArrowsIn, ArrowsOut, ArrowsClockwise } from '@phosphor-icons/react';
 import '../styles/info.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, Bounce } from 'react-toastify';
+import DisplayPhoto from './DisplayPhoto';
 
 function InfoDetails({ parseData, setParseData }) {
   // console.log(parseData.linkedIn);
@@ -10,7 +11,7 @@ function InfoDetails({ parseData, setParseData }) {
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
   const [email, setEmail] = useState('');
-
+  const [inputFile, setInputFile] = useState(null);
   const [linkedIn, setLinkedIn] = useState('');
   const [personalExpand, setPersonalExpand] = useState(1);
 
@@ -141,6 +142,11 @@ function InfoDetails({ parseData, setParseData }) {
                 onChange={handleChangeAddress}
               />
             </div>
+            <DisplayPhoto
+              inputFile={inputFile}
+              setInputFile={setInputFile}
+              setParseData={setParseData}
+            />
           </form>
         </div>
       )}
