@@ -8,16 +8,16 @@ import {
   StyleSheet,
   Link,
   Image,
-  PDFDownloadLink,
 } from '@react-pdf/renderer';
 import './DefaultResume.css';
 import LinkedInLogo from './linkedin-logo.png';
 import MapLogo from './map-pin-bold.png';
 import MailLogo from './envelope-simple-bold.png';
 import PhoneLogo from './phone-bold.png';
+import { PDFDownloadLink } from '@react-pdf/renderer';
 import { DownloadSimple } from '@phosphor-icons/react';
 
-function Header({ parseData, font, marginBot, showSection }) {
+function Header({ parseData, marginBot, showSection }) {
   const photo = parseData.displayPhoto
     ? URL.createObjectURL(parseData.displayPhoto)
     : '';
@@ -83,7 +83,7 @@ function Header({ parseData, font, marginBot, showSection }) {
     headingPrimary: {
       marginTop: '6px',
       fontSize: '15px',
-      fontFamily: font === 'Times-Roman' ? 'Times-Bold' : font + '-bold',
+      fontFamily: 'Times-Bold',
     },
     lineBreakAlt: {
       height: '1px',
@@ -135,7 +135,7 @@ function Header({ parseData, font, marginBot, showSection }) {
     // marginBottom: '28px',
     // border: '4px',
     color: '#222222',
-    fontFamily: font,
+    fontFamily: 'Times-Roman',
     paddingBottom: marginBot + 'px',
   };
   const linkedInLink = 'https://www.linkedin.com/in/' + parseData.linkedin;
@@ -205,7 +205,7 @@ function Header({ parseData, font, marginBot, showSection }) {
           <Education parseData={parseData} styles={styles} />
         )}
         {showSection.showProj === 1 && (
-          <Projects parseData={parseData} styles={styles} font={font} />
+          <Projects parseData={parseData} styles={styles} />
         )}
         {showSection.showCert === 1 && (
           <Certification parseData={parseData} styles={styles} />
@@ -287,7 +287,7 @@ const Education = ({ parseData, styles }) => {
   );
 };
 
-const Projects = ({ parseData, font, styles }) => {
+const Projects = ({ parseData, styles }) => {
   const projectNameText = {
     fontSize: '12px',
     paddingTop: '4px',
@@ -328,14 +328,9 @@ const Projects = ({ parseData, font, styles }) => {
 function Certification({ parseData, styles }) {
   const certificateName = {
     fontSize: '11px',
-    // fontFamily: 'Times-Bold',
     paddingTop: 4,
   };
 
-  // const institutionName = {
-  //   fontSize: 11,
-  //   marginLeft: 9,
-  // };
   return (
     <View style={styles.ExperienceBox}>
       <Text style={styles.headingPrimary}>Certifications</Text>
@@ -370,7 +365,6 @@ function DefaultResume({ parseData, showSection }) {
   const handleMarginChange = (e) => {
     setMarginBot(e.target.value);
   };
-  const font = 'Times-Roman';
 
   return (
     <section className="section-resume">
@@ -379,7 +373,6 @@ function DefaultResume({ parseData, showSection }) {
           document={
             <Header
               parseData={parseData}
-              font={font}
               marginBot={marginBot}
               showSection={showSection}
             />
@@ -410,7 +403,6 @@ function DefaultResume({ parseData, showSection }) {
       >
         <Header
           parseData={parseData}
-          font={font}
           marginBot={marginBot}
           showSection={showSection}
         />

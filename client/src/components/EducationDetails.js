@@ -10,6 +10,7 @@ import {
 } from '@phosphor-icons/react';
 import '../styles/info.css';
 import ShowSectionBtn from './ShowSectionBtn';
+import { toast, Bounce } from 'react-toastify';
 
 function EducationDetails({
   parseData,
@@ -36,6 +37,21 @@ function EducationDetails({
       const newObj = { ...prev };
       newObj.education = education;
       return newObj;
+    });
+    toast.success(' Updated Succesfully', {
+      style: {
+        fontSize: '1.4rem',
+        // fontWeight: 'bold',
+      },
+      position: 'top-center',
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+      transition: Bounce,
     });
   };
 

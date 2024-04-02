@@ -1,5 +1,5 @@
-.upload-profile-box {
-}
+/* .upload-profile-box {
+} */
 
 .SwitchRoot {
   width: 48px;
@@ -14,9 +14,9 @@
 .SwitchRoot:focus {
   box-shadow: 0 0 0 2px #de1b89;
 }
-.SwitchRoot[data-state='checked'] {
-  /* background-color: #373737; */
-}
+/* .SwitchRoot[data-state='checked'] {
+  background-color: #373737;
+} */
 
 .SwitchThumb {
   display: block;

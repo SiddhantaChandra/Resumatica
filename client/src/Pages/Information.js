@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
-
-import DefaultResume from '../components/Resumes/Resume-1/DefaultResume';
-
-import { ToastContainer, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Sections from '../components/Sections';
+import ResumeControls from '../components/ResumeControls';
+import { ToastContainer } from 'react-toastify';
 
 function Information({ parseData, setParseData }) {
   const [showSection, setShowSection] = useState({
@@ -20,19 +18,7 @@ function Information({ parseData, setParseData }) {
   return (
     <div className="information-container">
       <Navbar />
-      <ToastContainer
-        position="top-center"
-        autoClose={1000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover={false}
-        theme="dark"
-        transition={Bounce}
-      />
+      <ToastContainer />
       <div className="display-info-pdf">
         <Sections
           parseData={parseData}
@@ -40,8 +26,7 @@ function Information({ parseData, setParseData }) {
           showSection={showSection}
           setShowSection={setShowSection}
         />
-
-        <DefaultResume parseData={parseData} showSection={showSection} />
+        <ResumeControls parseData={parseData} showSection={showSection} />
       </div>
     </div>
   );

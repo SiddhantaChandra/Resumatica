@@ -10,6 +10,7 @@ import {
   ArrowsClockwise,
 } from '@phosphor-icons/react';
 import ShowSectionBtn from './ShowSectionBtn';
+import { toast, Bounce } from 'react-toastify';
 
 function Projects({ parseData, setParseData, setShowSection, showSection }) {
   const [projects, setProjects] = useState(() => {
@@ -31,6 +32,21 @@ function Projects({ parseData, setParseData, setShowSection, showSection }) {
       newObj.project = projects;
       console.log(newObj);
       return newObj;
+    });
+    toast.success(' Updated Succesfully', {
+      style: {
+        fontSize: '1.4rem',
+        // fontWeight: 'bold',
+      },
+      position: 'top-center',
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+      transition: Bounce,
     });
   };
 

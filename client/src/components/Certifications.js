@@ -8,6 +8,7 @@ import {
 } from '@phosphor-icons/react';
 import '../styles/cert-skills.css';
 import ShowSectionBtn from './ShowSectionBtn';
+import { toast, Bounce } from 'react-toastify';
 
 function Certifications({
   parseData,
@@ -34,6 +35,21 @@ function Certifications({
       const newObj = { ...prev };
       newObj.certifications = certifications;
       return newObj;
+    });
+    toast.success(' Updated Succesfully', {
+      style: {
+        fontSize: '1.4rem',
+        // fontWeight: 'bold',
+      },
+      position: 'top-center',
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+      transition: Bounce,
     });
   };
 

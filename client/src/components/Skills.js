@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../styles/cert-skills.css';
 import { ArrowsIn, ArrowsOut, ArrowsClockwise } from '@phosphor-icons/react';
 import ShowSectionBtn from './ShowSectionBtn';
+import { toast, Bounce } from 'react-toastify';
 
 function Skills({ parseData, setParseData, showSection, setShowSection }) {
   const [skills, setSkills] = useState(parseData.skills);
@@ -13,7 +14,6 @@ function Skills({ parseData, setParseData, showSection, setShowSection }) {
   };
 
   const handleSkillsChange = (e) => {
-    console.log(e.target.value);
     setSkills((prev) => setSkills(e.target.value));
   };
 
@@ -22,6 +22,21 @@ function Skills({ parseData, setParseData, showSection, setShowSection }) {
       const newObj = { ...prev };
       newObj.skills = skills;
       return newObj;
+    });
+    toast.success(' Updated Succesfully', {
+      style: {
+        fontSize: '1.4rem',
+        // fontWeight: 'bold',
+      },
+      position: 'top-center',
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+      transition: Bounce,
     });
   };
 

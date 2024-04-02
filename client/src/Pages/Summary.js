@@ -5,6 +5,7 @@ import { ArrowsOut, ArrowsIn, Sparkle } from '@phosphor-icons/react';
 import LoadingIcon from '../img/icons/grey-9026_128.gif';
 import ShowSectionBtn from '../components/ShowSectionBtn';
 import { ArrowsClockwise } from '@phosphor-icons/react';
+import { Bounce, toast } from 'react-toastify';
 
 function Summary({ parseData, setParseData, showSection, setShowSection }) {
   const [summary, setSummary] = useState(parseData.summary);
@@ -21,6 +22,21 @@ function Summary({ parseData, setParseData, showSection, setShowSection }) {
   };
 
   const handleUpdateInfo = () => {
+    toast.success(' Updated Succesfully', {
+      style: {
+        fontSize: '1.4rem',
+        // fontWeight: 'bold',
+      },
+      position: 'top-center',
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+      transition: Bounce,
+    });
     setParseData((prev) => {
       const newObj = { ...prev };
       newObj.summary = summary;
@@ -49,7 +65,6 @@ function Summary({ parseData, setParseData, showSection, setShowSection }) {
         setParseData((prev) => {
           const newObj = { ...prev };
           newObj.summary = data.answer;
-
           setIsSummaryLoading(0);
           return newObj;
         });
@@ -57,6 +72,21 @@ function Summary({ parseData, setParseData, showSection, setShowSection }) {
           let newObj = prev;
           newObj = data.answer;
           return newObj;
+        });
+        toast.success(' Updated Succesfully', {
+          style: {
+            fontSize: '1.4rem',
+            // fontWeight: 'bold',
+          },
+          position: 'top-center',
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark',
+          transition: Bounce,
         });
       });
     // console.log(parseData.summary.length);

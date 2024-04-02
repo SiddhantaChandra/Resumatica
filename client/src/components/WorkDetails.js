@@ -12,6 +12,7 @@ import {
 } from '@phosphor-icons/react';
 import ImproveRes from './ImproveRes';
 import ShowSectionBtn from './ShowSectionBtn';
+import { toast, Bounce } from 'react-toastify';
 
 function WorkDetails({ parseData, setParseData, showSection, setShowSection }) {
   const [experience, setExperience] = useState(() => {
@@ -56,6 +57,21 @@ function WorkDetails({ parseData, setParseData, showSection, setShowSection }) {
       const newObj = { ...prev };
       newObj.workexperience = experience;
       return newObj;
+    });
+    toast.success(' Updated Succesfully', {
+      style: {
+        fontSize: '1.4rem',
+        // fontWeight: 'bold',
+      },
+      position: 'top-center',
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+      transition: Bounce,
     });
   };
 

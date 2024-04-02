@@ -24,6 +24,18 @@ function InfoDetails({ parseData, setParseData }) {
   }, [setName, parseData, setAddress, setEmail, setPhone, setLinkedIn]);
 
   const handleUpdateInfo = () => {
+    setParseData((prev) => {
+      prev = {
+        ...prev,
+        name: name,
+        phone: phone,
+        email: email,
+        linkedin: linkedIn,
+        homeaddress: address,
+      };
+      console.log(prev);
+      return prev;
+    });
     toast.success(' Updated Succesfully', {
       style: {
         fontSize: '1.4rem',
@@ -38,18 +50,6 @@ function InfoDetails({ parseData, setParseData }) {
       progress: undefined,
       theme: 'dark',
       transition: Bounce,
-    });
-    setParseData((prev) => {
-      prev = {
-        ...prev,
-        name: name,
-        phone: phone,
-        email: email,
-        linkedin: linkedIn,
-        homeaddress: address,
-      };
-      console.log(prev);
-      return prev;
     });
   };
 

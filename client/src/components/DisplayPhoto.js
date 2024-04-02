@@ -5,7 +5,6 @@ import '../styles/displayphoto.css';
 
 function DisplayPhoto({ inputFile, setInputFile, setParseData }) {
   const [switchToggle, setSwitchToggle] = useState(0);
-  const [radiusProfilePic, setRadiusProfilePic] = useState('45px');
 
   const onDrop = useCallback(
     (acceptedFiles) => {
@@ -39,7 +38,6 @@ function DisplayPhoto({ inputFile, setInputFile, setParseData }) {
   };
 
   const handleRadiusSlider = (e) => {
-    setRadiusProfilePic(e.target.value);
     setParseData((prev) => {
       const newObj = { ...prev };
       newObj.photoRadius = e.target.value + 'px';
