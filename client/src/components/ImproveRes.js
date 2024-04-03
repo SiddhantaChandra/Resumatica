@@ -18,7 +18,7 @@ function ImproveRes({ respon, indexOfRespon, indexOfWork, setExperience }) {
 
   const handleImproveRespon = () => {
     // console.log(respon, indexOfRespon, respon.length);
-    fetch('/improve-reponsibility', {
+    fetch('https://resumatica.onrender.com/improve-reponsibility', {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain' },
       body: respon,

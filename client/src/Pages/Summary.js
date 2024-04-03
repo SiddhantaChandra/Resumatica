@@ -54,7 +54,7 @@ function Summary({ parseData, setParseData, showSection, setShowSection }) {
     // if (parseData.summary.length < 50) return;
 
     setIsSummaryLoading(1);
-    fetch('/improve-summary', {
+    fetch('https://resumatica.onrender.com/improve-summary', {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain' },
       body: parseData.summary,

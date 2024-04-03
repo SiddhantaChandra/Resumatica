@@ -19,9 +19,20 @@ let jsonObj;
 
 const cors = require('cors');
 
+const allowedOrigins = [
+  'https://resumatica.netlify.app',
+  'http://localhost:3000',
+];
+
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: (origin, callback) => {
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
   }),
 );
 
