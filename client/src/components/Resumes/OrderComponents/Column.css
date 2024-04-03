@@ -1,0 +1,19 @@
+.order-column {
+  background-color: #222222;
+  color: #fff;
+  font-size: 1.6rem;
+  border-radius: 0.8rem;
+  padding: 1.2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 1rem;
+  position: absolute;
+}
+
+.order-items {
+  border-radius: 0.8rem;
+  padding: 1.2rem 2rem;
+  background-color: #373737;
+  /* cursor: move; */
+}

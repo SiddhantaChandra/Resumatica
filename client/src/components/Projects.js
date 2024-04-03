@@ -116,7 +116,7 @@ function Projects({ parseData, setParseData, setShowSection, showSection }) {
               <ArrowsIn size={24} color="#fff" />
             </button>
             <ShowSectionBtn
-              name="showProj"
+              name="Projects"
               showSection={showSection}
               setShowSection={setShowSection}
             />
@@ -134,7 +134,7 @@ function Projects({ parseData, setParseData, setShowSection, showSection }) {
               <ArrowsOut size={24} color="#fff" />
             </button>
             <ShowSectionBtn
-              name="showProj"
+              name="Projects"
               showSection={showSection}
               setShowSection={setShowSection}
             />

@@ -87,7 +87,7 @@ function Certifications({
               <ArrowsIn size={24} color="#fff" />
             </button>
             <ShowSectionBtn
-              name="showCert"
+              name="Certifications"
               showSection={showSection}
               setShowSection={setShowSection}
             />
@@ -102,7 +102,7 @@ function Certifications({
               <ArrowsOut size={24} color="#fff" />
             </button>
             <ShowSectionBtn
-              name="showCert"
+              name="Certifications"
               showSection={showSection}
               setShowSection={setShowSection}
             />

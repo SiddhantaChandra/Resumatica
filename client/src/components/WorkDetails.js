@@ -199,7 +199,7 @@ function WorkDetails({ parseData, setParseData, showSection, setShowSection }) {
                       <ArrowsIn size={24} color="#fff" />
                     </button>
                     <ShowSectionBtn
-                      name="showWork"
+                      name="Experience"
                       showSection={showSection}
                       setShowSection={setShowSection}
                     />
@@ -433,7 +433,7 @@ function WorkDetails({ parseData, setParseData, showSection, setShowSection }) {
               <ArrowsOut size={24} color="#fff" />
             </button>
             <ShowSectionBtn
-              name="showWork"
+              name="Experience"
               showSection={showSection}
               setShowSection={setShowSection}
             />

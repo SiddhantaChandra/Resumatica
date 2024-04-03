@@ -7,12 +7,12 @@ import { ToastContainer } from 'react-toastify';
 
 function Information({ parseData, setParseData }) {
   const [showSection, setShowSection] = useState({
-    showSummary: 1,
-    showWork: 1,
-    showEdu: 1,
-    showProj: 1,
-    showCert: 1,
-    showSkills: 1,
+    Summary: 1,
+    Experience: 1,
+    Education: 1,
+    Projects: 1,
+    Certifications: 1,
+    Skills: 1,
   });
 
   return (

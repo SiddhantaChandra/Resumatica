@@ -50,7 +50,7 @@ function Skills({ parseData, setParseData, showSection, setShowSection }) {
               <ArrowsIn size={24} color="#fff" />
             </button>
             <ShowSectionBtn
-              name="showSkills"
+              name="Skills"
               showSection={showSection}
               setShowSection={setShowSection}
             />
@@ -65,7 +65,7 @@ function Skills({ parseData, setParseData, showSection, setShowSection }) {
               <ArrowsOut size={24} color="#fff" />
             </button>
             <ShowSectionBtn
-              name="showSkills"
+              name="Skills"
               showSection={showSection}
               setShowSection={setShowSection}
             />

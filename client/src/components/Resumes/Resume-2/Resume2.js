@@ -9,11 +9,11 @@ import {
   Link,
   Image,
 } from '@react-pdf/renderer';
-import './DefaultResume.css';
-import LinkedInLogo from './linkedin-logo.png';
-import MapLogo from './map-pin-bold.png';
-import MailLogo from './envelope-simple-bold.png';
-import PhoneLogo from './phone-bold.png';
+import '../Resume-1/DefaultResume.css';
+import LinkedInLogo from '../Resume-1/linkedin-logo.png';
+import MapLogo from '../Resume-1/map-pin-bold.png';
+import MailLogo from '../Resume-1/envelope-simple-bold.png';
+import PhoneLogo from '../Resume-1/phone-bold.png';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { DownloadSimple } from '@phosphor-icons/react';
 import OrderBox from '../OrderBox';
@@ -356,7 +356,7 @@ function DefaultResume({ parseData, showSection }) {
     },
     {
       id: 2,
-      title: 'Experience',
+      title: 'Work Experience',
       ComponentName: <Experience parseData={parseData} styles={styles} />,
     },
     {

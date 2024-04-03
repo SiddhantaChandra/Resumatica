@@ -135,7 +135,7 @@ function EducationDetails({
                       </button>
                     )}
                     <ShowSectionBtn
-                      name="showEdu"
+                      name="Education"
                       showSection={showSection}
                       setShowSection={setShowSection}
                     />
@@ -263,7 +263,7 @@ function EducationDetails({
                 <ArrowsOut size={24} color="#fff" />
               </button>
               <ShowSectionBtn
-                name="showEdu"
+                name="Education"
                 showSection={showSection}
                 setShowSection={setShowSection}
               />
