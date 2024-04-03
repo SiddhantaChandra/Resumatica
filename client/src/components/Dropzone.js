@@ -31,7 +31,7 @@ function Dropzone({ setParseData, setIsParsing }) {
     formData.append('pdfFile', inputFile);
 
     setIsParsing(1);
-    fetch('/convert', {
+    fetch('https://resumatica.onrender.com/convert', {
       method: 'POST',
       body: formData,
     })

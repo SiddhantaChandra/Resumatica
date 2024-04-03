@@ -17,6 +17,14 @@ const upload = multer({ storage: storage });
 
 let jsonObj;
 
+const cors = require('cors');
+
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+  }),
+);
+
 const fetchUrl = async (url) => {
   try {
     const response = await fetch(url);
