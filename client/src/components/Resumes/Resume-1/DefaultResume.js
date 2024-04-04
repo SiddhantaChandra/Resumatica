@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Document,
   Page,
@@ -23,6 +23,7 @@ function Header({ parseData, marginBot, showSection, components, styles }) {
     ? URL.createObjectURL(parseData.displayPhoto)
     : '';
 
+  console.log(showSection);
   const bodyStyles = {
     marginTop: '28px',
     // marginBottom: '28px',
@@ -87,10 +88,121 @@ function Header({ parseData, marginBot, showSection, components, styles }) {
             ))}
         </View>
         <View style={styles.lineBreak} />
-        {components.map((el) => {
-          const Title = el.title;
-          return showSection[Title] === 1 ? el.ComponentName : <View></View>;
-        })}
+
+        {components[0].id === 1 && showSection.Summary === 1 && (
+          <Summary parseData={parseData} styles={styles} />
+        )}
+        {components[0].id === 2 && showSection.Experience === 1 && (
+          <Experience parseData={parseData} styles={styles} />
+        )}
+        {components[0].id === 3 && showSection.Education === 1 && (
+          <Education parseData={parseData} styles={styles} />
+        )}
+        {components[0].id === 4 && showSection.Projects === 1 && (
+          <Projects parseData={parseData} styles={styles} />
+        )}
+        {components[0].id === 5 && showSection.Certifications === 1 && (
+          <Certification parseData={parseData} styles={styles} />
+        )}
+        {components[0].id === 6 && showSection.Skills === 1 && (
+          <Skills parseData={parseData} styles={styles} />
+        )}
+        {/* 1 */}
+        {/* <Summary parseData={parseData} styles={styles} /> */}
+        {components[1].id === 1 && showSection.Summary === 1 && (
+          <Summary parseData={parseData} styles={styles} />
+        )}
+        {components[1].id === 2 && showSection.Experience === 1 && (
+          <Experience parseData={parseData} styles={styles} />
+        )}
+        {components[1].id === 3 && showSection.Education === 1 && (
+          <Education parseData={parseData} styles={styles} />
+        )}
+        {components[1].id === 4 && showSection.Projects === 1 && (
+          <Projects parseData={parseData} styles={styles} />
+        )}
+        {components[1].id === 5 && showSection.Certifications === 1 && (
+          <Certification parseData={parseData} styles={styles} />
+        )}
+        {components[1].id === 6 && showSection.Skills === 1 && (
+          <Skills parseData={parseData} styles={styles} />
+        )}
+        {/* 2 */}
+        {components[2].id === 1 && showSection.Summary === 1 && (
+          <Summary parseData={parseData} styles={styles} />
+        )}
+        {components[2].id === 2 && showSection.Experience === 1 && (
+          <Experience parseData={parseData} styles={styles} />
+        )}
+        {components[2].id === 3 && showSection.Education === 1 && (
+          <Education parseData={parseData} styles={styles} />
+        )}
+        {components[2].id === 4 && showSection.Projects === 1 && (
+          <Projects parseData={parseData} styles={styles} />
+        )}
+        {components[2].id === 5 && showSection.Certifications === 1 && (
+          <Certification parseData={parseData} styles={styles} />
+        )}
+        {components[2].id === 6 && showSection.Skills === 1 && (
+          <Skills parseData={parseData} styles={styles} />
+        )}
+        {/* 3 */}
+        {components[3].id === 1 && showSection.Summary === 1 && (
+          <Summary parseData={parseData} styles={styles} />
+        )}
+        {components[3].id === 2 && showSection.Experience === 1 && (
+          <Experience parseData={parseData} styles={styles} />
+        )}
+        {components[3].id === 3 && showSection.Education === 1 && (
+          <Education parseData={parseData} styles={styles} />
+        )}
+        {components[3].id === 4 && showSection.Projects === 1 && (
+          <Projects parseData={parseData} styles={styles} />
+        )}
+        {components[3].id === 5 && showSection.Certifications === 1 && (
+          <Certification parseData={parseData} styles={styles} />
+        )}
+        {components[3].id === 6 && showSection.Skills === 1 && (
+          <Skills parseData={parseData} styles={styles} />
+        )}
+        {/* 4 */}
+        {components[4].id === 1 && showSection.Summary === 1 && (
+          <Summary parseData={parseData} styles={styles} />
+        )}
+        {components[4].id === 2 && showSection.Experience === 1 && (
+          <Experience parseData={parseData} styles={styles} />
+        )}
+        {components[4].id === 3 && showSection.Education === 1 && (
+          <Education parseData={parseData} styles={styles} />
+        )}
+        {components[4].id === 4 && showSection.Projects === 1 && (
+          <Projects parseData={parseData} styles={styles} />
+        )}
+        {components[4].id === 5 && showSection.Certifications === 1 && (
+          <Certification parseData={parseData} styles={styles} />
+        )}
+        {components[4].id === 6 && showSection.Skills === 1 && (
+          <Skills parseData={parseData} styles={styles} />
+        )}
+        {/* 5 */}
+        {components[5].id === 1 && showSection.Summary === 1 && (
+          <Summary parseData={parseData} styles={styles} />
+        )}
+        {components[5].id === 2 && showSection.Experience === 1 && (
+          <Experience parseData={parseData} styles={styles} />
+        )}
+        {components[5].id === 3 && showSection.Education === 1 && (
+          <Education parseData={parseData} styles={styles} />
+        )}
+        {components[5].id === 4 && showSection.Projects === 1 && (
+          <Projects parseData={parseData} styles={styles} />
+        )}
+        {components[5].id === 5 && showSection.Certifications === 1 && (
+          <Certification parseData={parseData} styles={styles} />
+        )}
+        {components[5].id === 6 && showSection.Skills === 1 && (
+          <Skills parseData={parseData} styles={styles} />
+        )}
       </Page>
     </Document>
   );
@@ -239,6 +351,25 @@ function Skills({ parseData, styles }) {
 }
 
 function DefaultResume({ parseData, showSection }) {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  console.log(windowWidth);
+
+  const docStyle = {
+    width: windowWidth > 1366 ? '880px' : '640px',
+    height: windowWidth > 1366 ? '1132px' : '880px',
+  };
   const styles = StyleSheet.create({
     headingBox: {
       textAlign: 'center',
@@ -419,9 +550,8 @@ function DefaultResume({ parseData, showSection }) {
       </div>
       <PDFViewer
         // style={{ width: '450px', height: '640px' }}
-        style={{ width: '640px', height: '880px', backgroundColor: '#fff' }}
+        style={docStyle}
         showToolbar={false}
-        className="lol"
       >
         <Header
           parseData={parseData}

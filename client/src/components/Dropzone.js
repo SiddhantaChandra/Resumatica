@@ -31,7 +31,7 @@ function Dropzone({ setParseData, setIsParsing }) {
     formData.append('pdfFile', inputFile);
 
     setIsParsing(1);
-    fetch('https://resumatica.onrender.com/convert', {
+    fetch('/convert', {
       method: 'POST',
       body: formData,
     })
@@ -76,7 +76,9 @@ function Dropzone({ setParseData, setIsParsing }) {
           <p>{inputFileName}</p>
         )}
       </div>
-      <button onClick={handleUploadData}>Upload</button>
+      <button onClick={handleUploadData} className="upload-btn">
+        Upload
+      </button>
     </div>
   );
 }

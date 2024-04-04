@@ -4,6 +4,11 @@
 
 .drop-box-container {
   margin-top: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3.2rem;
 }
 
 .navbar {
@@ -104,4 +109,67 @@
 
 .hide-section {
   background-color: #f82423;
+}
+.upload-btn {
+  padding: 2rem 4rem;
+  background-color: #10f0c3;
+  font-weight: bold;
+  border-radius: 0.8rem;
+  width: max-content;
+}
+
+.upload-section-hero {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
+
+.create-resume-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+
+  margin-top: 3.2rem;
+}
+
+.hero-banner-img {
+  height: 46rem;
+}
+
+.create-new-btn {
+  background-color: #10f0c3;
+  padding: 1.2rem 3.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.8rem;
+  font-weight: bold;
+}
+
+.create-cta {
+  background-color: #de1b89;
+  color: #fff;
+  padding: 1.2rem 2.8rem;
+
+  position: absolute;
+  bottom: 57%;
+}
+
+@media (min-width: 1440px) {
+  .hero-banner-img {
+    height: 72rem;
+  }
+
+  .create-new-btn {
+    padding: 1.8rem 10.8rem;
+  }
+
+  .create-cta {
+    background-color: #de1b89;
+    color: #fff;
+    padding: 1.8rem 3.8rem;
+
+    position: absolute;
+    bottom: 64%;
+  }
 }

@@ -15,6 +15,7 @@ import ShowSectionBtn from './ShowSectionBtn';
 import { toast, Bounce } from 'react-toastify';
 
 function WorkDetails({ parseData, setParseData, showSection, setShowSection }) {
+  console.log(parseData);
   const [experience, setExperience] = useState(() => {
     return parseData.workexperience
       ? parseData.workexperience.map((el) => ({
@@ -318,29 +319,32 @@ function WorkDetails({ parseData, setParseData, showSection, setShowSection }) {
                     }
                   />
                 </div>
-                <div className="experience-box">
-                  <label className="label">Dates {i + 1}</label>
-                  <input
-                    placeholder="2022-2024"
-                    className="input work-input"
-                    name="dates"
-                    value={el.dates}
-                    onChange={(e) =>
-                      handleExpChange(e.target.value, e.target.name, i)
-                    }
-                  />
-                </div>
-                <div className="experience-box">
-                  <label className="label">Location {i + 1}</label>
-                  <input
-                    placeholder="California, USA"
-                    className="input work-input"
-                    name="location"
-                    value={el.location}
-                    onChange={(e) =>
-                      handleExpChange(e.target.value, e.target.name, i)
-                    }
-                  />
+                <div className="exp-date-location-box">
+                  <div className="experience-box">
+                    <label className="label">Dates {i + 1}</label>
+                    <input
+                      placeholder="2022-2024"
+                      className="input work-input exp-dates"
+                      name="dates"
+                      value={el.dates}
+                      onChange={(e) =>
+                        handleExpChange(e.target.value, e.target.name, i)
+                      }
+                    />
+                  </div>
+
+                  <div className="experience-box">
+                    <label className="label">Location {i + 1}</label>
+                    <input
+                      placeholder="California, USA"
+                      className="input work-input exp-location"
+                      name="location"
+                      value={el.location}
+                      onChange={(e) =>
+                        handleExpChange(e.target.value, e.target.name, i)
+                      }
+                    />
+                  </div>
                 </div>
                 <div
                   className="experience-box"

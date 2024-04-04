@@ -10,10 +10,6 @@ import {
   Image,
 } from '@react-pdf/renderer';
 import '../Resume-1/DefaultResume.css';
-import LinkedInLogo from '../Resume-1/linkedin-logo.png';
-import MapLogo from '../Resume-1/map-pin-bold.png';
-import MailLogo from '../Resume-1/envelope-simple-bold.png';
-import PhoneLogo from '../Resume-1/phone-bold.png';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { DownloadSimple } from '@phosphor-icons/react';
 import OrderBox from '../OrderBox';
@@ -36,61 +32,187 @@ function Header({ parseData, marginBot, showSection, components, styles }) {
   return (
     <Document>
       <Page size="A4" style={bodyStyles} className="bodyStyles">
-        <View style={styles.headingBox} className="heading-box">
-          {parseData.displayPhoto && parseData.showPhoto === 0 && (
-            <Image src={photo} style={styles.headingPhoto} />
-          )}
-          <Text style={styles.headingName} className="heading-name">
-            {parseData.name}
-          </Text>
+        <View>
+          <View>
+            <View style={styles.headingBox} className="heading-box">
+              <Text style={styles.headingName} className="heading-name">
+                {parseData.name}
+              </Text>
+            </View>
+            <View style={styles.headingDetails} className="heading-details">
+              {parseData.homeaddress === '' ||
+                (parseData.homeaddress === null ? (
+                  <></>
+                ) : (
+                  <>
+                    <Text style={styles.headingDetailsText}>
+                      Adress: {parseData.homeaddress}
+                    </Text>
+                  </>
+                ))}
+              {parseData.phone === '' ||
+                (parseData.phone === null ? (
+                  <></>
+                ) : (
+                  <>
+                    <Text style={styles.headingDetailsText}>
+                      Phone: {parseData.phone}
+                    </Text>
+                  </>
+                ))}
+              {parseData.email === '' ||
+                (parseData.email === null ? (
+                  <></>
+                ) : (
+                  <>
+                    <Text style={styles.headingDetailsText}>
+                      Email:{' '}
+                      <Link style={styles.headingDetailsText}>
+                        {parseData.email}
+                      </Link>
+                    </Text>
+                  </>
+                ))}
+              {parseData.linkedin === '' ||
+                (parseData.linkedin === null ? (
+                  <></>
+                ) : (
+                  <>
+                    <Text style={styles.headingDetailsText}>
+                      LinkedIn:
+                      <Link
+                        style={styles.headingDetailsText}
+                        src={linkedInLink}
+                      >
+                        {' '}
+                        {parseData.linkedin}
+                      </Link>
+                    </Text>
+                  </>
+                ))}
+            </View>
+          </View>
+          <View styles={styles.headingImageBox}>
+            {parseData.displayPhoto && parseData.showPhoto === 0 && (
+              <Image src={photo} style={styles.headingPhoto} />
+            )}
+          </View>
         </View>
-        <View style={styles.headingDetails} className="heading-details">
-          {parseData.homeaddress === '' ||
-            (parseData.homeaddress === null ? (
-              <></>
-            ) : (
-              <>
-                <Image src={MapLogo} style={styles.headingLogo} />
-                <Text style={styles.headingDetailsText}>
-                  {parseData.homeaddress}
-                </Text>
-              </>
-            ))}
-          {parseData.phone === '' ||
-            (parseData.phone === null ? (
-              <></>
-            ) : (
-              <>
-                <Image src={PhoneLogo} style={styles.headingLogoAlt} />
-                <Text style={styles.headingDetailsText}>{parseData.phone}</Text>
-              </>
-            ))}
-          {parseData.email === '' ||
-            (parseData.email === null ? (
-              <></>
-            ) : (
-              <>
-                <Image src={MailLogo} style={styles.headingLogoAlt} />
-                <Link style={styles.headingDetailsText}>{parseData.email}</Link>
-              </>
-            ))}
-          {parseData.linkedin === '' ||
-            (parseData.linkedin === null ? (
-              <></>
-            ) : (
-              <>
-                <Image src={LinkedInLogo} style={styles.headingLogoAlt} />
-                <Link style={styles.headingDetailsText} src={linkedInLink}>
-                  {parseData.linkedin}
-                </Link>
-              </>
-            ))}
-        </View>
+
         <View style={styles.lineBreak} />
-        {components.map((el) => {
-          const Title = el.title;
-          return showSection[Title] === 1 ? el.ComponentName : <View></View>;
-        })}
+        {components[0].id === 1 && showSection.Summary === 1 && (
+          <Summary parseData={parseData} styles={styles} />
+        )}
+        {components[0].id === 2 && showSection.Experience === 1 && (
+          <Experience parseData={parseData} styles={styles} />
+        )}
+        {components[0].id === 3 && showSection.Education === 1 && (
+          <Education parseData={parseData} styles={styles} />
+        )}
+        {components[0].id === 4 && showSection.Projects === 1 && (
+          <Projects parseData={parseData} styles={styles} />
+        )}
+        {components[0].id === 5 && showSection.Certifications === 1 && (
+          <Certification parseData={parseData} styles={styles} />
+        )}
+        {components[0].id === 6 && showSection.Skills === 1 && (
+          <Skills parseData={parseData} styles={styles} />
+        )}
+        {/* 1 */}
+        {components[1].id === 1 && showSection.Summary === 1 && (
+          <Summary parseData={parseData} styles={styles} />
+        )}
+        {components[1].id === 2 && showSection.Experience === 1 && (
+          <Experience parseData={parseData} styles={styles} />
+        )}
+        {components[1].id === 3 && showSection.Education === 1 && (
+          <Education parseData={parseData} styles={styles} />
+        )}
+        {components[1].id === 4 && showSection.Projects === 1 && (
+          <Projects parseData={parseData} styles={styles} />
+        )}
+        {components[1].id === 5 && showSection.Certifications === 1 && (
+          <Certification parseData={parseData} styles={styles} />
+        )}
+        {components[1].id === 6 && showSection.Skills === 1 && (
+          <Skills parseData={parseData} styles={styles} />
+        )}
+        {/* 2 */}
+        {components[2].id === 1 && showSection.Summary === 1 && (
+          <Summary parseData={parseData} styles={styles} />
+        )}
+        {components[2].id === 2 && showSection.Experience === 1 && (
+          <Experience parseData={parseData} styles={styles} />
+        )}
+        {components[2].id === 3 && showSection.Education === 1 && (
+          <Education parseData={parseData} styles={styles} />
+        )}
+        {components[2].id === 4 && showSection.Projects === 1 && (
+          <Projects parseData={parseData} styles={styles} />
+        )}
+        {components[2].id === 5 && showSection.Certifications === 1 && (
+          <Certification parseData={parseData} styles={styles} />
+        )}
+        {components[2].id === 6 && showSection.Skills === 1 && (
+          <Skills parseData={parseData} styles={styles} />
+        )}
+        {/* 3 */}
+        {components[3].id === 1 && showSection.Summary === 1 && (
+          <Summary parseData={parseData} styles={styles} />
+        )}
+        {components[3].id === 2 && showSection.Experience === 1 && (
+          <Experience parseData={parseData} styles={styles} />
+        )}
+        {components[3].id === 3 && showSection.Education === 1 && (
+          <Education parseData={parseData} styles={styles} />
+        )}
+        {components[3].id === 4 && showSection.Projects === 1 && (
+          <Projects parseData={parseData} styles={styles} />
+        )}
+        {components[3].id === 5 && showSection.Certifications === 1 && (
+          <Certification parseData={parseData} styles={styles} />
+        )}
+        {components[3].id === 6 && showSection.Skills === 1 && (
+          <Skills parseData={parseData} styles={styles} />
+        )}
+        {/* 4 */}
+        {components[4].id === 1 && showSection.Summary === 1 && (
+          <Summary parseData={parseData} styles={styles} />
+        )}
+        {components[4].id === 2 && showSection.Experience === 1 && (
+          <Experience parseData={parseData} styles={styles} />
+        )}
+        {components[4].id === 3 && showSection.Education === 1 && (
+          <Education parseData={parseData} styles={styles} />
+        )}
+        {components[4].id === 4 && showSection.Projects === 1 && (
+          <Projects parseData={parseData} styles={styles} />
+        )}
+        {components[4].id === 5 && showSection.Certifications === 1 && (
+          <Certification parseData={parseData} styles={styles} />
+        )}
+        {components[4].id === 6 && showSection.Skills === 1 && (
+          <Skills parseData={parseData} styles={styles} />
+        )}
+        {/* 5 */}
+        {components[5].id === 1 && showSection.Summary === 1 && (
+          <Summary parseData={parseData} styles={styles} />
+        )}
+        {components[5].id === 2 && showSection.Experience === 1 && (
+          <Experience parseData={parseData} styles={styles} />
+        )}
+        {components[5].id === 3 && showSection.Education === 1 && (
+          <Education parseData={parseData} styles={styles} />
+        )}
+        {components[5].id === 4 && showSection.Projects === 1 && (
+          <Projects parseData={parseData} styles={styles} />
+        )}
+        {components[5].id === 5 && showSection.Certifications === 1 && (
+          <Certification parseData={parseData} styles={styles} />
+        )}
+        {components[5].id === 6 && showSection.Skills === 1 && (
+          <Skills parseData={parseData} styles={styles} />
+        )}
       </Page>
     </Document>
   );
@@ -241,11 +363,10 @@ function Skills({ parseData, styles }) {
 function DefaultResume({ parseData, showSection }) {
   const styles = StyleSheet.create({
     headingBox: {
-      textAlign: 'center',
       fontWeight: 'extrabold',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
+      width: '84%',
+      marginLeft: 'auto',
+      marginRight: 'auto',
     },
     headingName: {
       fontSize: '24px',
@@ -253,16 +374,19 @@ function DefaultResume({ parseData, showSection }) {
       fontFamily: 'Times-Bold',
     },
     headingPhoto: {
-      height: '70px',
-      width: '70px',
-      textAlign: 'center',
+      height: '90px',
+      width: '90px',
+      // textAlign: 'center',
       borderRadius: parseData.photoRadius,
+      position: 'absolute',
+      right: '48',
+      bottom: '0',
     },
+
     headingDetails: {
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
+      width: '84%',
+      marginLeft: 'auto',
+      marginRight: 'auto',
       gap: '2px',
       marginTop: '4px',
     },
@@ -280,10 +404,14 @@ function DefaultResume({ parseData, showSection }) {
       fontWeight: 'light',
       textDecoration: 'none',
     },
+    headingImageBox: {
+      position: 'absolute',
+      right: '0',
+    },
     lineBreak: {
       height: '1px',
       backgroundColor: '#f1e5e0',
-      marginTop: '16px',
+      marginTop: '8px',
       // marginBottom: '8px',
       width: '84%',
       marginLeft: 'auto',
@@ -356,7 +484,7 @@ function DefaultResume({ parseData, showSection }) {
     },
     {
       id: 2,
-      title: 'Work Experience',
+      title: 'Experience',
       ComponentName: <Experience parseData={parseData} styles={styles} />,
     },
     {

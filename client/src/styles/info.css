@@ -71,7 +71,10 @@
   }
 
   .input-email {
-    width: 20rem;
+    width: 28rem;
+  }
+  .mobile-input {
+    width: 22rem;
   }
 
   .edu-input {
@@ -205,14 +208,7 @@
 }
 
 @media (min-width: 1440px) {
-  /* .edu-input {
-    width: 34.6rem;
+  .personal-details-box-container {
+    width: 82rem;
   }
-
-  .education-info-wrapper {
-    display: grid;
-    grid-template-columns: auto auto;
-
-    column-gap: 2.8rem;
-  } */
 }

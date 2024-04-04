@@ -88,3 +88,81 @@
 .m-27 {
   margin-left: 27rem;
 }
+
+.add-cert-btn {
+  margin-bottom: 2.4rem;
+}
+
+@media (min-width: 1440px) {
+  .m-24 {
+    margin-left: 50rem;
+  }
+
+  .summary-text-area {
+    width: 70rem;
+    height: 14rem;
+  }
+
+  .m-13 {
+    margin-left: 39.2rem;
+  }
+
+  .work-input {
+    width: 68rem;
+  }
+
+  .exp-date-location-box {
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  .exp-dates {
+    width: 28rem;
+  }
+
+  .exp-location {
+    width: 38.6rem;
+  }
+
+  .div-outline {
+    width: 68rem;
+  }
+
+  .edu-input {
+    width: 68rem;
+  }
+
+  .textarea-projects {
+    width: 68rem;
+  }
+
+  .proj-input {
+    width: 68rem;
+  }
+
+  .m-18 {
+    margin-left: 44.5rem;
+  }
+  .m-25 {
+    margin-left: 52rem;
+  }
+
+  .cert-input {
+    width: 68rem;
+  }
+
+  .m-22 {
+    margin-left: 48rem;
+  }
+
+  .m-27 {
+    margin-left: 53.4rem;
+  }
+
+  .skills-input {
+    width: 77.8rem;
+  }
+  .experiences-box-collapsed {
+    width: 82rem;
+  }
+}

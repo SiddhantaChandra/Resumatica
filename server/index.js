@@ -1,6 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const fs = require('fs');
+const bodyParser = require('body-parser');
 
 require('dotenv').config();
 
@@ -17,24 +18,24 @@ const upload = multer({ storage: storage });
 
 let jsonObj;
 
-const cors = require('cors');
+// const cors = require('cors');
 
-const allowedOrigins = [
-  'https://resumatica.netlify.app',
-  'http://localhost:3000',
-];
+// const allowedOrigins = [
+//   'https://resumatica.netlify.app',
+//   'http://localhost:3000',
+// ];
 
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (allowedOrigins.indexOf(origin) !== -1) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-  }),
-);
+// app.use(
+//   cors({
+//     origin: (origin, callback) => {
+//       if (allowedOrigins.indexOf(origin) !== -1) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error('Not allowed by CORS'));
+//       }
+//     },
+//   }),
+// );
 
 const fetchUrl = async (url) => {
   try {
@@ -361,18 +362,17 @@ app.post('/improve-reponsibility', async (req, res) => {
     ],
     temperature: 0,
   });
-  console.log(JSON.parse(completion.choices[0].message.content));
+  // console.log(JSON.parse(completion.choices[0].message.content));
   res.send(JSON.parse(completion.choices[0].message.content));
 });
 
-app.use(express.text());
-app.post('/improve-summary', async (req, res) => {
-  const check = req.body;
+app.use(bodyParser.json());
 
+app.post('/improve-summary', async (req, res) => {
   const prompt =
     'Analyze the following json resume and write the  summary section return as JSON as {answer: "..."} (The summary section is the first part of a resume after the header section. This sums up your skills and experience in up to 3 sentences.):' +
-    jsonObj;
-  console.log(prompt);
+    JSON.stringify(req.body);
+  // console.log(prompt);
 
   const completion = await openAI.chat.completions.create({
     model: 'gpt-3.5-turbo-0125',
@@ -385,8 +385,9 @@ app.post('/improve-summary', async (req, res) => {
     ],
     temperature: 0,
   });
-  console.log(JSON.parse(completion.choices[0].message.content));
+  // console.log(JSON.parse(completion.choices[0].message.content));
   res.send(JSON.parse(completion.choices[0].message.content));
+  // res.send(prompt);
 });
 
 app.listen(port, () => {

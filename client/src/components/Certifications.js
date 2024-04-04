@@ -134,7 +134,7 @@ function Certifications({
             );
           })}
           <button
-            className=" add-education-btn"
+            className=" add-education-btn add-cert-btn"
             onClick={(e) => handleAddCert()}
           >
             <ListPlus size={24} color="#fff" />

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { ArrowsIn, ArrowsOut, ArrowsClockwise } from '@phosphor-icons/react';
 import '../styles/info.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,21 +7,13 @@ import DisplayPhoto from './DisplayPhoto';
 
 function InfoDetails({ parseData, setParseData }) {
   // console.log(parseData.linkedIn);
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [address, setAddress] = useState('');
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState(parseData.name);
+  const [phone, setPhone] = useState(parseData.phone);
+  const [address, setAddress] = useState(parseData.homeaddress);
+  const [email, setEmail] = useState(parseData.email);
   const [inputFile, setInputFile] = useState(null);
-  const [linkedIn, setLinkedIn] = useState('');
+  const [linkedIn, setLinkedIn] = useState(parseData.linkedin);
   const [personalExpand, setPersonalExpand] = useState(1);
-
-  useEffect(() => {
-    setName(parseData.name);
-    setPhone(parseData.phone);
-    setEmail(parseData.email);
-    setAddress(parseData.homeaddress);
-    setLinkedIn(parseData.linkedin);
-  }, [setName, parseData, setAddress, setEmail, setPhone, setLinkedIn]);
 
   const handleUpdateInfo = () => {
     setParseData((prev) => {
@@ -116,7 +108,7 @@ function InfoDetails({ parseData, setParseData }) {
                 <label className="label">Mobile</label>
                 <input
                   placeholder="+12 34567 89101"
-                  className="input"
+                  className="input mobile-input"
                   value={phone}
                   onChange={handleChangePhone}
                 />

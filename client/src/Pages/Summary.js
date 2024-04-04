@@ -54,10 +54,10 @@ function Summary({ parseData, setParseData, showSection, setShowSection }) {
     // if (parseData.summary.length < 50) return;
 
     setIsSummaryLoading(1);
-    fetch('https://resumatica.onrender.com/improve-summary', {
+    fetch('/improve-summary', {
       method: 'POST',
-      headers: { 'Content-Type': 'text/plain' },
-      body: parseData.summary,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(parseData),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -113,7 +113,7 @@ function Summary({ parseData, setParseData, showSection, setShowSection }) {
           {isSummaryLoading === 1 ? (
             <div className="summary-text-btn-box disabled-div">
               <textarea
-                className="input text-area"
+                className="input text-area summary-text-area"
                 value={summary}
                 onChange={handleChangeSummary}
                 disabled="true"
@@ -130,7 +130,7 @@ function Summary({ parseData, setParseData, showSection, setShowSection }) {
             <div className="summary-text-btn-box">
               <textarea
                 placeholder="Write something that describes you and what you bring to the table, and press the magic button beside!"
-                className="input text-area"
+                className="input text-area summary-text-area"
                 value={summary}
                 onChange={handleChangeSummary}
               />
