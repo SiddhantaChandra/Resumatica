@@ -68,7 +68,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding-top: 3.2rem;
+  /* padding-top: 3.2rem; */
 }
 
 .btn-order {
@@ -77,10 +77,41 @@
 
 .select-resume {
   position: absolute;
-  bottom: 78%;
+  bottom: 68%;
   right: 9%;
   padding: 0.4rem 0.8rem;
   border-radius: 0.4rem;
+}
+
+.select-window-box {
+  display: flex;
+  width: 64rem;
+  border-top-right-radius: 0.8rem;
+}
+
+.resume-controls-box {
+  border-radius: 0.8rem;
+}
+
+.select-window-btn {
+  width: 50%;
+  margin-bottom: 1.8rem;
+}
+
+.resume-window-toggle {
+  background-color: #373737;
+  color: #fff;
+  font-weight: bold;
+  padding: 1.2rem 0;
+  border-top-left-radius: 0.8rem;
+}
+
+.analysis-window-toggle {
+  background-color: #373737;
+  color: #fff;
+  font-weight: bold;
+  padding: 1.2rem 0;
+  border-top-right-radius: 0.8rem;
 }
 
 @media (min-width: 1440px) {

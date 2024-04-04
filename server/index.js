@@ -9,6 +9,9 @@ const OpenAI = require('openai');
 const openAI = new OpenAI({ apiKey: process.env.OPENAI_KEY });
 
 const convertapi = require('convertapi')(process.env.CONVERTAPI_KEY);
+// Google
+const { GoogleGenerativeAI } = require('@google/generative-ai');
+const genAI = new GoogleGenerativeAI(process.env.GEMAPI_KEY);
 
 const app = express();
 const port = 5000;
@@ -338,9 +341,6 @@ app.post('/convert', upload.single('pdfFile'), async (req, res) => {
 
 app.use(express.text());
 app.post('/improve-reponsibility', async (req, res) => {
-  // const obj = jsonObj;
-  // console.log(req.body, jsonObj);
-  // // OPENAI Call
   const prompt =
     'You are an experienced HR, you expertise is helping others improve their resume. With respect to the json:';
   const text =
@@ -389,6 +389,49 @@ app.post('/improve-summary', async (req, res) => {
   res.send(JSON.parse(completion.choices[0].message.content));
   // res.send(prompt);
 });
+
+app.use(bodyParser.json());
+
+app.post('/career-suggestion', async (req, res) => {
+  const prompt =
+    'I will give you my json resume, analyze and suggest 5 course suggestions that align with my existing skills and experience and ONLY return in JSON format as example:{Course:[{name: "Advanced JavaScript Frameworks (e.g., React, Angular, Vue.js)", rationale: "You already have experience with JavaScript and React. Deepening your knowledge of advanced frameworks will enhance your front-end development skills and employability.", benefits:"Allows you to build complex and interactive web applications, stay current with industry trends, and potentially explore opportunities in front-end development or full-stack development."}, {...}]} and here is my json resume:' +
+    JSON.stringify(req.body);
+  // console.log(prompt);
+
+  const completion = await openAI.chat.completions.create({
+    model: 'gpt-3.5-turbo-0125',
+    response_format: { type: 'json_object' },
+    messages: [
+      {
+        role: 'system',
+        content: prompt,
+      },
+    ],
+    temperature: 0,
+  });
+  // console.log(JSON.parse(completion.choices[0].message.content));
+  res.send(JSON.parse(completion.choices[0].message.content));
+  // res.send(prompt);
+});
+
+// app.use(bodyParser.json());
+
+// app.post('/career-suggestion', async (req, res) => {
+//   const prompt =
+//     'I will give you my json resume, analyze and suggest 5 course suggestions that align with my existing skills and experience and ONLY return in JSON format as example:{Course:[{name: "Advanced JavaScript Frameworks (e.g., React, Angular, Vue.js)", rationale: "You already have experience with JavaScript and React. Deepening your knowledge of advanced frameworks will enhance your front-end development skills and employability.", benefits:"Allows you to build complex and interactive web applications, stay current with industry trends, and potentially explore opportunities in front-end development or full-stack development."}, {...}]} and here is my json resume:' +
+//     JSON.stringify(req.body);
+
+//   const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+
+//   const result = await model.generateContent(prompt);
+//   const response = await result.response;
+//   const text = response;
+
+//   console.log(text);
+
+//   res.send(JSON.stringify(text));
+//   // res.send(prompt);
+// });
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);

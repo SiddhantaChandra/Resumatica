@@ -1,0 +1,43 @@
+.career-paths {
+  width: 64rem;
+  padding: 1.2rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.career-path-box {
+  background-color: #2c2c2c;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.8rem;
+}
+
+.cp-name {
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.cp-text {
+  color: #adadad;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+strong {
+  color: #fff;
+}
+
+.refresh {
+  padding: 1.2rem 0;
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: #fff;
+  border-radius: 0.8rem;
+  background-image: linear-gradient(to right, #9f7aea, #ed64a6);
+}
+
+.cp-loading {
+  align-items: center;
+  justify-content: center;
+}
