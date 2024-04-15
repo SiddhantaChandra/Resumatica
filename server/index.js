@@ -9,9 +9,6 @@ const OpenAI = require('openai');
 const openAI = new OpenAI({ apiKey: process.env.OPENAI_KEY });
 
 const convertapi = require('convertapi')(process.env.CONVERTAPI_KEY);
-// Google
-const { GoogleGenerativeAI } = require('@google/generative-ai');
-const genAI = new GoogleGenerativeAI(process.env.GEMAPI_KEY);
 
 const app = express();
 const port = 5000;
