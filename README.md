@@ -52,11 +52,23 @@ Fork `master` branch into your personal repository. Clone it to local computer. 
 
 ```sh
 $ git clone https://github.com/SiddhantaChandra/Resumatica
+```
+```sh
+$ cd Resumatica
+```
+```sh
 $ cd server
+```
+```sh
 $ npm i
 $ npm run dev
+```
+```sh
 $ cd..
 $ cd client
+```
+
+```sh
 $ npm i
 $ npm start
 ```
