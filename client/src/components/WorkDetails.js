@@ -15,7 +15,7 @@ import ShowSectionBtn from './ShowSectionBtn';
 import { toast, Bounce } from 'react-toastify';
 
 function WorkDetails({ parseData, setParseData, showSection, setShowSection }) {
-  console.log(parseData);
+  // console.log(parseData);
   const [experience, setExperience] = useState(() => {
     return parseData.workexperience
       ? parseData.workexperience.map((el) => ({

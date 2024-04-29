@@ -23,8 +23,6 @@ function Certifications({
   });
   const [expandCert, setExpandCert] = useState(1);
 
-  // console.log(certifications);
-
   const handleExpandCert = () => {
     if (expandCert === 0) setExpandCert(1);
     if (expandCert === 1) setExpandCert(0);
@@ -71,7 +69,6 @@ function Certifications({
   const handleChangeCert = (index, value) => {
     setCertifications((prev) => {
       const newArr = [...prev];
-      console.log(newArr);
       newArr[index] = { certificatename: value };
       return newArr;
     });

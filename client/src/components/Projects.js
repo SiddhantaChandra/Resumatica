@@ -30,7 +30,6 @@ function Projects({ parseData, setParseData, setShowSection, showSection }) {
     setParseData((prev) => {
       const newObj = { ...prev };
       newObj.project = projects;
-      console.log(newObj);
       return newObj;
     });
     toast.success(' Updated Succesfully', {

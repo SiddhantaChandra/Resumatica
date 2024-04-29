@@ -25,7 +25,6 @@ function InfoDetails({ parseData, setParseData }) {
         linkedin: linkedIn,
         homeaddress: address,
       };
-      console.log(prev);
       return prev;
     });
     toast.success(' Updated Succesfully', {

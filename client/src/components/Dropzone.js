@@ -23,7 +23,6 @@ function Dropzone({ setParseData, setIsParsing }) {
 
   const sendFileToServer = (inputFile) => {
     if (!inputFile) {
-      console.error('No file selected');
       return;
     }
 
@@ -42,9 +41,7 @@ function Dropzone({ setParseData, setIsParsing }) {
         setIsParsing(0);
         navigate('/edit-personal-info');
       })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+      .catch((error) => {});
   };
 
   const handleUploadData = () => {

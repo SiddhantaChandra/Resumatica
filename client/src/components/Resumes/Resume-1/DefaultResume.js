@@ -23,7 +23,7 @@ function Header({ parseData, marginBot, showSection, components, styles }) {
     ? URL.createObjectURL(parseData.displayPhoto)
     : '';
 
-  console.log(showSection);
+  // console.log(showSection);
   const bodyStyles = {
     marginTop: '28px',
     // marginBottom: '28px',
@@ -364,7 +364,7 @@ function DefaultResume({ parseData, showSection }) {
     };
   }, []);
 
-  console.log(windowWidth);
+  // console.log(windowWidth);
 
   const docStyle = {
     width: windowWidth > 1366 ? '880px' : '640px',
